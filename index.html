@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsFlow - Your Personalized News Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sentiment/2.1.0/sentiment.min.js"></script>
+</head>
+<body>
+    <body>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="nav-container">
+                <div class="logo">NewsFlow</div>
+                <nav class="nav-links">
+                    <select class="country-selector">
+                        <option value="in">India</option>
+                        <option value="us">United States</option>
+                        <option value="gb">United Kingdom</option>
+                        <option value="au">Australia</option>
+                        <option value="ca">Canada</option>
+                        <option value="fr">France</option>
+                        <option value="de">Germany</option>
+                    </select>
+                    <button class="nav-button" id="showAll">
+                        <i class="fas fa-newspaper"></i>
+                        All News
+                    </button>
+                    <button class="nav-button" id="showBookmarks">
+                        <i class="fas fa-bookmark"></i>
+                        Bookmarks
+                        <span class="bookmark-count">0</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+        <main class="main-container">
+            <div class="error-message"></div>
+    
+        <main class="main-container">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search news articles...">
+            </div>
+            <section class="timeline-section">
+                <h2>Interactive News Timeline</h2>
+                <div class="timeline"></div>
+            </section>
+            
+            <section class="preferences">
+                <h2>Your News Preferences</h2>
+                <div class="category-tags">
+                    <div class="tag" data-category="technology">Technology</div>
+                    <div class="tag" data-category="business">Business</div>
+                    <div class="tag" data-category="science">Science</div>
+                    <div class="tag" data-category="health">Health</div>
+                    <div class="tag" data-category="entertainment">Entertainment</div>
+                </div>
+                <div class="filter-bar">
+                    <select class="sort-select">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                    <div class="sentiment-filter">
+                        <div class="tag" data-sentiment="positive">Positive</div>
+                        <div class="tag" data-sentiment="neutral">Neutral</div>
+                        <div class="tag" data-sentiment="negative">Negative</div>
+                    </div>
+                </div>
+            </section>
+    
+            <div class="news-grid"></div>
+            <div class="bookmarked-section">
+                <h2>Your Bookmarked Articles</h2>
+                <div class="bookmarked-grid news-grid"></div>
+            </div>
+        </main>
+    
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin fa-2x"></i>
+        </div>
+    
+        <div class="toast"></div>
+    
+        <script src="script.js"></script>
+    </body>
+    </html>
